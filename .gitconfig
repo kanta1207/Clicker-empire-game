@@ -1,0 +1,9 @@
+[user]
+	name = Kanta Sakai
+	email = 99339182+kanta1207@users.noreply.github.com
+[core]
+	editor = code --wait
+[merge]
+	tool = code --wait \"$MERGED\"
+[push]
+	default = simple
