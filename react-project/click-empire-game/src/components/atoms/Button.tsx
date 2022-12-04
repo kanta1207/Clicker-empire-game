@@ -13,12 +13,12 @@ const colorMap = new Map<string, string>([
   ["primary", "bg-[#017BFE] text-[#ffffff]"],
   [
     "secondary",
-    "bg-transparent outline outline-1 outline-[#ffffff] text-[#ffffff]",
+    "outline outline-3 outline-[#017BFE] text-[#017BFE]",
   ]
 ]);
 
 //basic styles apply to all of the buttons
-const baseStyle = "rounded cursor-pointer";
+const baseStyle = "rounded-xl shadow-xl cursor-pointer hover:opacity-80";
 
 export const Button: FC<Props> = (props) => {
   const { children, onClick, buttonType, mediaQueries } = props;
