@@ -6,7 +6,7 @@ import { Items } from "./types/types";
 export const itemList: Items[] = [
   {
     name: "Flip Machine",
-    price: 15000,
+    price: 1500,
     description:
       "You can double the number of the burgers you make per a click,which will double your sales.",
     imgPath:
@@ -17,7 +17,7 @@ export const itemList: Items[] = [
   },
   {
     name: "Super Burger making Robot",
-    price: 50000,
+    price: 5000,
     description:
       "Making a burger is an only thing this robot can do, but he's best at it. It will quintuple the number of the burgers you make per a click.",
     imgPath:
@@ -27,22 +27,22 @@ export const itemList: Items[] = [
   },
   {
     name: "Lemonade Stand",
-    price: 30000,
+    price: 10000,
     description:
-      "By runnning a lemonade stand, You will be able to automatically earn ¥30 per a sec. ",
+      "By runnning a lemonade stand, You will be able to automatically earn ¥1000 per a sec. ",
     imgPath:
       "https://4.bp.blogspot.com/-PkaVbxoDP7c/XDXbzs6-yBI/AAAAAAABREU/PUHQusznG0go6EcG0eJVXYPuhXeQqPwWQCLcBGAs/s800/lemonade_shop_girl.png",
-    profit: 30,
+    profit: 1000,
     
   },
   {
     name: "Ice Cream Shop",
-    price: 50000,
+    price: 20000,
     description:
-      "By runniing a ice cream shop, You will be able to automatically earn ¥120 per a sec. ",
+      "By runniing a ice cream shop, You will be able to automatically earn ¥2000 per a sec. ",
     imgPath:
       "https://2.bp.blogspot.com/-IDJ-PAml6xI/UvTd5BRmybI/AAAAAAAAdf8/qkKtOM235yw/s800/job_icecream_ya.png",
-    profit: 120,
+    profit: 2000,
     
     
   },
