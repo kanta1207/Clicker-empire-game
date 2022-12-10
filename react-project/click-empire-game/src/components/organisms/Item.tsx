@@ -21,13 +21,16 @@ export const Item: FC<Props> = (props) => {
   };
 
   return (
-    <Container colorKey="secondary">
+    <div>
+      <Container colorKey="secondary">
       <h3 className="text-2xl ">{item.name}</h3>
       <div className="flex justify-center items-center py-3">
-        <img src={item.imgPath} alt={item.name} width="200px" className="lg:ml-8"/>
+        <div className="sm:p-3">
+          <img src={item.imgPath} alt={item.name} width="200px" className="lg:ml-8"/>
+        </div>
         <div className="py-5 space-y-5 w-full">
           <div className="lg:pl-[10%] lg:w-[80%]">
-            <p className="text-sm md:text-md lg:text-xl font-light">{item.description}</p>
+            <p className="text-xs sm:text-sm md:text-md lg:text-xl font-light">{item.description}</p>
           </div>
           {isOpen ? (
             <>
@@ -76,5 +79,6 @@ export const Item: FC<Props> = (props) => {
         </div>
       </div>
     </Container>
+    </div>
   );
 };

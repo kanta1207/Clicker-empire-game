@@ -41,7 +41,7 @@ export const useUserInfo = () => {
       numOfBurger: 0,
       burgerPerAClick: 1,
       priceOfBurger: 25,
-      items: [],
+      items : [],
     };
     const docRef = doc(usersRef, name);
     const docSnap = await getDoc(docRef);
@@ -57,7 +57,6 @@ export const useUserInfo = () => {
   }, []);
 
   const saveUsersData = useCallback(async (userInfo: UserInfo) => {
-    
     const docRef = doc(usersRef, userInfo.name);
     await updateDoc(docRef, {
       name : userInfo.name,

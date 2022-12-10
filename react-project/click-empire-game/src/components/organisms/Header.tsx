@@ -1,22 +1,23 @@
 import { Container } from "../atoms/Container";
 import { RiArrowGoBackFill } from "react-icons/ri";
 import { AiOutlineSave } from "react-icons/ai";
-import { useUserInfo } from "../../hooks/useUserInfo";
-import { useRecoilState } from "recoil";
-import { userInfoState } from "../../global/atoms";
+import { FC } from "react";
 
-export const Header = () => {
-    const {saveUsersData,navigate} = useUserInfo()
-    const [userInfo] = useRecoilState(userInfoState)
-    
+
+type Props = {
+  onClickSave : () => void;
+  onClickBack : () => void;
+}
+export const Header : FC<Props>= (props) => {
+  const {onClickSave,onClickBack} = props
   return (
     <Container colorKey="primary">
       <div className="flex items-center justify-between w-full">
-        <div className="hover:opacity-80" onClick={()=>navigate("/")}>
+        <div className="hover:opacity-80" onClick={onClickBack}>
           <RiArrowGoBackFill size="1.5rem"/>
         </div>
         <p>Clicker Empire Game</p>
-        <div className="hover:opacity-80" onClick={()=>saveUsersData(userInfo)}>
+        <div className="hover:opacity-80" onClick={onClickSave}>
           <AiOutlineSave size="1.5rem" />
         </div>
       </div>

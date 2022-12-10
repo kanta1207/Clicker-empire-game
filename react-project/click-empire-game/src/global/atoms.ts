@@ -8,7 +8,7 @@ export const userInfoState = atom<UserInfo>({
       budget: 0,
       burgerPerAClick: 1,
       dayCount: 0,
-      items: [],
+      items : [],
       name: "",
       numOfBurger: 0,
       priceOfBurger: 25,

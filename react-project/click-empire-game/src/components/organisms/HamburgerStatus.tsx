@@ -14,7 +14,7 @@ export const HamburgerStatus: FC<Props> = (props) => {
   return (
     <>
       <Container colorKey="primary">
-        <div className="text-sm">
+        <div className="text-sm sm:text-md lg:text-xl sm:p-4">
           <p>
           You've made <span className="text-xl sm:text-2xl">{numOfBurger}</span> burgers
         </p>
