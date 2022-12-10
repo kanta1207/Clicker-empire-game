@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { userInfoState } from "../../global/atoms";
 import { useUserInfo } from "../../hooks/useUserInfo";
-import { Items, UserInfo } from "../../types/types";
+import { Items} from "../../types/types";
 
 import { Hamburger } from "../organisms/Hamburger";
 import { HamburgerStatus } from "../organisms/HamburgerStatus";

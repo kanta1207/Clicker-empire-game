@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, memo, useEffect } from "react";
 import { Container } from "../atoms/Container";
 
 type Props = {
@@ -10,7 +10,7 @@ type Props = {
   setAge : React.Dispatch<React.SetStateAction<number>>;
 };
 
-export const UserProfile: FC<Props> = (props) => {
+export const UserProfile: FC<Props> = memo((props) => {
   const { userName ,budget,dayCount,setDayCount,age,setAge} = props;
 
   console.log("userprofile");
@@ -33,4 +33,4 @@ export const UserProfile: FC<Props> = (props) => {
         <p>Budget : ¥{budget}</p>
     </Container>
   );
-};
+});

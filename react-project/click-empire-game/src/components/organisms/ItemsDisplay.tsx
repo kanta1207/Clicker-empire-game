@@ -1,5 +1,4 @@
-import React, { FC } from "react";
-import { couldStartTrivia } from "typescript";
+import React, { FC, memo } from "react";
 import { itemList } from "../../itemsList";
 import { Items } from "../../types/types";
 import { Item } from "./Item";
@@ -12,7 +11,7 @@ type Props = {
   setItemsYouHave: React.Dispatch<React.SetStateAction<Items[]>>;
 };
 
-export const ItemsDisplay: FC<Props> = (props) => {
+export const ItemsDisplay: FC<Props> = memo((props) => {
   const { setBurgerPerAClick, setPrice, budget, setBudget, setItemsYouHave } =
     props;
   console.log("display");
@@ -60,5 +59,5 @@ export const ItemsDisplay: FC<Props> = (props) => {
         ))}
       </div>
   );
-};
+});
 // ? "w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth"

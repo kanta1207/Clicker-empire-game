@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, memo } from "react";
 import { Items } from "../../types/types";
 import { Container } from "../atoms/Container";
 
@@ -7,7 +7,7 @@ type Props = {
   itemsYouHave: Items[];
 };
 
-export const Hamburger: FC<Props> = (props) => {
+export const Hamburger: FC<Props> = memo((props) => {
   const { onClickBurger, itemsYouHave } = props;
   console.log(itemsYouHave)
   return (
@@ -35,4 +35,4 @@ export const Hamburger: FC<Props> = (props) => {
       </div>
     </Container>
   );
-};
+});

@@ -1,5 +1,4 @@
-import { FC, useState } from "react";
-import { Button } from "../atoms/Button";
+import { FC, memo } from "react";
 import { Container } from "../atoms/Container";
 
 type Props = {
@@ -8,7 +7,7 @@ type Props = {
   onClickBurger : () => void;
 };
 
-export const HamburgerStatus: FC<Props> = (props) => {
+export const HamburgerStatus: FC<Props> = memo((props) => {
     const {priceOfBurger,numOfBurger} = props;
 
   return (
@@ -25,4 +24,4 @@ export const HamburgerStatus: FC<Props> = (props) => {
       </Container>
     </>
   );
-};
+});
