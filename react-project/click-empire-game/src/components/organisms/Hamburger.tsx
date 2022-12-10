@@ -1,5 +1,5 @@
-import React, { FC } from "react";
-import { Items } from "../../itemsList";
+import React, { FC, memo } from "react";
+import { Items } from "../../types/types";
 import { Container } from "../atoms/Container";
 
 type Props = {
@@ -7,7 +7,7 @@ type Props = {
   itemsYouHave: Items[];
 };
 
-export const Hamburger: FC<Props> = (props) => {
+export const Hamburger: FC<Props> = memo((props) => {
   const { onClickBurger, itemsYouHave } = props;
   console.log(itemsYouHave)
   return (
@@ -25,9 +25,8 @@ export const Hamburger: FC<Props> = (props) => {
             <p>Items you have</p>
             {itemsYouHave.map((item) => (
               <>
-              <img width="30px" alt={item.name} src={item.imgPath} className="fit"/>
+              <img width="50px" alt={item.name} src={item.imgPath}/>
               </>
-              
             ))}
           </div>
         ) : (
@@ -36,4 +35,4 @@ export const Hamburger: FC<Props> = (props) => {
       </div>
     </Container>
   );
-};
+});

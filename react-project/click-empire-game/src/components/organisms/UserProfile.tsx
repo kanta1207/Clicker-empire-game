@@ -1,16 +1,17 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, memo, useEffect } from "react";
 import { Container } from "../atoms/Container";
 
 type Props = {
   userName : string;
-  budget : number
+  budget : number;
+  dayCount : number;
+  setDayCount : React.Dispatch<React.SetStateAction<number>>
+  age : number;
+  setAge : React.Dispatch<React.SetStateAction<number>>;
 };
 
-export const UserProfile: FC<Props> = (props) => {
-  const { userName ,budget} = props;
-
-  const [dayCount, setDayCount] = useState(0);
-  const [age, setAge] = useState(20);
+export const UserProfile: FC<Props> = memo((props) => {
+  const { userName ,budget,dayCount,setDayCount,age,setAge} = props;
 
   console.log("userprofile");
 
@@ -32,4 +33,4 @@ export const UserProfile: FC<Props> = (props) => {
         <p>Budget : ¥{budget}</p>
     </Container>
   );
-};
+});

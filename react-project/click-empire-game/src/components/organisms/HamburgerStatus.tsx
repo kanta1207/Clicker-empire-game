@@ -1,5 +1,4 @@
-import { FC, useState } from "react";
-import { Button } from "../atoms/Button";
+import { FC, memo } from "react";
 import { Container } from "../atoms/Container";
 
 type Props = {
@@ -8,19 +7,21 @@ type Props = {
   onClickBurger : () => void;
 };
 
-export const HamburgerStatus: FC<Props> = (props) => {
+export const HamburgerStatus: FC<Props> = memo((props) => {
     const {priceOfBurger,numOfBurger} = props;
 
   return (
     <>
       <Container colorKey="primary">
-        <p>
-          You made <span className="text-2xl">{numOfBurger}</span> burgers
+        <div className="text-sm sm:text-md lg:text-xl sm:p-4">
+          <p>
+          You've made <span className="text-xl sm:text-2xl">{numOfBurger}</span> burgers
         </p>
         <p>
-          You'll get <span className="text-2xl">¥{priceOfBurger}</span> per one click
+          You'll get <span className="text-xl sm:text-2xl">¥{priceOfBurger}</span> per one click
         </p>
+        </div>
       </Container>
     </>
   );
-};
+});

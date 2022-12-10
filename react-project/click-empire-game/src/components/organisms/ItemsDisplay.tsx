@@ -1,6 +1,6 @@
-import React, { FC } from "react";
-import { couldStartTrivia } from "typescript";
-import { itemList, Items } from "../../itemsList";
+import React, { FC, memo } from "react";
+import { itemList } from "../../itemsList";
+import { Items } from "../../types/types";
 import { Item } from "./Item";
 
 type Props = {
@@ -11,14 +11,13 @@ type Props = {
   setItemsYouHave: React.Dispatch<React.SetStateAction<Items[]>>;
 };
 
-export const ItemsDisplay: FC<Props> = (props) => {
+export const ItemsDisplay: FC<Props> = memo((props) => {
   const { setBurgerPerAClick, setPrice, budget, setBudget, setItemsYouHave } =
     props;
   console.log("display");
 
   //depending on what the item is, change how it works
   const itemFunc = (item: Items, amount: number) => {
-
     if (item.power !== undefined) {
       setPrice((price) => price * (item.power as number) ** amount);
       setBurgerPerAClick((burgerPerAClick) => burgerPerAClick * 2);
@@ -45,19 +44,20 @@ export const ItemsDisplay: FC<Props> = (props) => {
     if (amount <= 0) {
       alert("Invalid input");
       return;
-    };
+    }
 
-    itemFunc(item,amount);
+    itemFunc(item, amount);
 
-    setBudget(budget => budget - total);
-    setItemsYouHave(items =>  [item ,...items])
+    setBudget((budget) => budget - total);
+    setItemsYouHave((items) => [item, ...items]);
   };
 
   return (
-    <div>
-      {itemList.map((item) => (
-        <Item item={item} purchaseItem={purchaseItem} />
-      ))}
-    </div>
+      <div className="h-full">
+        {itemList.map((item) => (
+          <Item item={item} purchaseItem={purchaseItem} />
+        ))}
+      </div>
   );
-};
+});
+// ? "w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth"
