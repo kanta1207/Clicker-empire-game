@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { Items } from "../../itemsList";
+import { Items } from "../../types/types";
 import { Button } from "../atoms/Button";
 import { Container } from "../atoms/Container";
 
@@ -24,9 +24,11 @@ export const Item: FC<Props> = (props) => {
     <Container colorKey="secondary">
       <h3 className="text-2xl ">{item.name}</h3>
       <div className="flex justify-center items-center py-3">
-        <img src={item.imgPath} alt={item.name} width="200px" />
-        <div className="py-5 space-y-5">
-          <p className="text-md font-light">{item.description}</p>
+        <img src={item.imgPath} alt={item.name} width="200px" className="lg:ml-8"/>
+        <div className="py-5 space-y-5 w-full">
+          <div className="lg:pl-[10%] lg:w-[80%]">
+            <p className="text-sm md:text-md lg:text-xl font-light">{item.description}</p>
+          </div>
           {isOpen ? (
             <>
               <p className="">Price : ¥{item.price}</p>
@@ -44,8 +46,8 @@ export const Item: FC<Props> = (props) => {
                   mediaQueries="py-2 px-5 md:py-3 md:px-6 text-sm md:text-lg"
                   onClick={() => {
                     purchaseItem(item, amount);
-                    setIsOpen(false)
-                    setAmount(0)
+                    setIsOpen(false);
+                    setAmount(0);
                   }}
                 >
                   Purchase
@@ -60,11 +62,11 @@ export const Item: FC<Props> = (props) => {
               </div>
             </>
           ) : (
-            <div className="flex items-center justify-around">
-              <p className="text-xl">Price : ¥{item.price}</p>
+            <div className="text-center space-y-2">
+              <p className="text-md sm:text-xl lg:text-2xl">Price : ¥{item.price}</p>
               <Button
                 buttonType="primary"
-                mediaQueries="py-2 px-4"
+                mediaQueries="py-2 px-4 text-xs lg:text-lg"
                 onClick={() => setIsOpen(true)}
               >
                 Check out

@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { couldStartTrivia } from "typescript";
-import { itemList, Items } from "../../itemsList";
+import { itemList } from "../../itemsList";
+import { Items } from "../../types/types";
 import { Item } from "./Item";
 
 type Props = {

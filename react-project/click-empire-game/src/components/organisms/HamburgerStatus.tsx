@@ -14,12 +14,14 @@ export const HamburgerStatus: FC<Props> = (props) => {
   return (
     <>
       <Container colorKey="primary">
-        <p>
-          You made <span className="text-2xl">{numOfBurger}</span> burgers
+        <div className="text-sm">
+          <p>
+          You've made <span className="text-xl sm:text-2xl">{numOfBurger}</span> burgers
         </p>
         <p>
-          You'll get <span className="text-2xl">¥{priceOfBurger}</span> per one click
+          You'll get <span className="text-xl sm:text-2xl">¥{priceOfBurger}</span> per one click
         </p>
+        </div>
       </Container>
     </>
   );

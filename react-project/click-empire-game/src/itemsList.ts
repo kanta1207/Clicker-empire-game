@@ -1,14 +1,8 @@
-export type Items = {
-  name: string;
-  price: number;
-  description: string;
-  imgPath: string;
-  power?: number;
-  profit?: number;
-};
+import { Items } from "./types/types";
+
+
 
 //You need to edit "itemFunc()" in "src/component/organisms/itemDisplay.tsx" to assign a function for each items.
-
 export const itemList: Items[] = [
   {
     name: "Flip Machine",

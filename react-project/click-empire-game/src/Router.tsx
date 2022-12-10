@@ -1,13 +1,16 @@
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import { LoginPage } from './components/pages/LoginPage'
-import { MainPage } from './components/pages/MainPage'
+import React from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { RecoilRoot } from "recoil";
+import { LoginPage } from "./components/pages/LoginPage";
+import { MainPage } from "./components/pages/MainPage";
 
 export const Router = () => {
   return (
-    <Routes>
-      <Route element={<LoginPage/>} path="/"/>
-      <Route element={<MainPage/>} path="/main"/>
-    </Routes>
-  )
-}
+    <RecoilRoot>
+      <Routes>
+        <Route element={<LoginPage />} path="/" />
+        <Route element={<MainPage />} path="/main" />
+      </Routes>
+    </RecoilRoot>
+  );
+};
